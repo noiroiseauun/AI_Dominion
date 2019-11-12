@@ -1,7 +1,4 @@
 
-# import numpy as np
-# import itertools
-import time
 
 class card():
     """docstring for ."""
@@ -43,6 +40,40 @@ class card():
 
     def isCurse(self): return "curse" in self.type
 
+def kingdomCards():
+    kingdom = list()
+    kingdom.append(card("curse", ["curse"], 0, coins=0, vp=-1))
+    kingdom.append(card("estate", ["victory"], 2, coins=0, vp=1))
+    kingdom.append(card("duchy", ["victory"], 5, coins=0, vp=3))
+    kingdom.append(card("province", ["victory"], 8, coins=0, vp=6))
+    kingdom.append(card("copper", ["treasure"], 0, coins=1, vp=0))
+    kingdom.append(card("silver", ["treasure"], 3, coins=2, vp=0))
+    kingdom.append(card("gold", ["treasure"], 6, coins=3, vp=0))
+    return kingdom
+
+def startingCards():
+    deck = list()
+    for _ in range(7): deck.append(card("copper", "treasure", 0, coins=1, vp=0))
+    for _ in range(3): deck.append(card("estate", "victory", 2, coins=0, vp=1))
+    return deck
+
+def allDeckCards(hand, deck, discard, play):
+    content = list()
+    areas = [hand, deck, discard, play]
+    for area in areas:
+        for card in area: content.append(card.getName())
+    return deckContent(content)
+
+def deckContent(deck):
+    tmpSupplyCards = kingdomCards()
+    supplyCards = list()
+    for card in tmpSupplyCards: supplyCards.append( [card.getName(), 0] )
+    for card in deck:
+        for supplyCard in supplyCards:
+            if card in supplyCard:
+                supplyCard[1] += 1
+                break
+    return supplyCards
 
 def testCards():
     x = card("silver", ["treasure"], 3, coins=2)

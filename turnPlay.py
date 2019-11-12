@@ -64,39 +64,61 @@ def firstHand(cards):
     hand = list()
     deck = cards
     for _ in range(5): hand.append(deck.pop(-1))
-    print("Hand: {}".format(len(hand)))
-    print("Deck: {}".format(len(deck)))
-    for index in range(5):
-        print("Index: {} \t Hand: {} \t Deck: {}".format(index, hand[index].getName(), deck[index].getName()))
     return (hand, deck, list(), list())
 
 def actionPhase(hand, deck, discard, play, p1):
     ''' No actions right now '''
-    return hand, deck, discard, play
+    return hand, deck, discard, play, p1
 
 def buyPhase(hand, deck, discard, play, p1):
-    tmpHand = hand
-    while 
-        if card.isTreasure(): p1.changeCoins(card.getCoins())
-    return hand, deck, discard, play
+    global supplyCards
+    tmpHand = list()
+    while len(hand) > 0:
+        card = hand.pop(-1)
+        if card.isTreasure():
+            p1.changeCoins(card.getCoins())
+            play.append(card)
+        else: tmpHand.append(card)
+    hand = tmpHand
+    possibleBuys = list()
+    for card in supplyCards:
+        if card.getCost() <= p1.getCoins(): possibleBuys.append(card)
+    # Now to figure out buying the best card...
+    return hand, deck, discard, play, p1
 
 def cleanupPhase(hand, deck, discard, play, p1):
+    while len(hand) > 0: discard.append(hand.pop(-1))
+    while len(play) > 0: discard.append(play.pop(-1))
 
-    return hand, deck, discard, play
+    while len(hand) < 5:
+        if len(deck) < 1:
+            print("SHUFFLE")
+            random.shuffle(discard)
+            deck = discard
+            discard = list()
+        hand.append(deck.pop(-1))
+    print("New hand:")
+    for card in hand: print(card)
+
+    return hand, deck, discard, play, p1
 
 def main():
+    global supplyCards
+    random.seed(19)
     p1 = playerStats(1,1,0,3) # Easy 3 vp for starting
-    cards = startingCards(p1)
+    cards = startingCards()
     supplyCards = kingdomCards()
     hand, deck, discard, play = firstHand(cards)
-
+    print("starting hand:")
+    for card in hand: print(card)
     for turn in range(maxTurns):
         for phase in phases:
             if phase == "action": hand, deck, discard, play, p1 = actionPhase(hand, deck, discard, play, p1)
             elif phase == "buy": hand, deck, discard, play, p1 = buyPhase(hand, deck, discard, play, p1)
             elif phase == "cleanup": hand, deck, discard, play, p1 = cleanupPhase(hand, deck, discard, play, p1)
             else: print("OH NO")
-
+        print("turn {} done".format(turn))
+        input("> ")
 
     return
 

@@ -24,6 +24,7 @@ class card():
         self.vp = vp
         return
 
+    def __str__(self): return self.getName()
     # def print(self): return self.getName()
 
     def getName(self): return self.name

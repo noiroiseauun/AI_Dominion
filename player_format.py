@@ -5,11 +5,10 @@ class playerStats():
     def __init__(self, actions, buys, coins, vp):
         '''
         Parameters:
-            name:   string
-            type:   LIST OF STRINGS
-            cost:   int
-            coins:  int
-            vp:     int
+            actions:    int
+            buys:       int
+            coins:      int
+            vp:         int
         Returns:
             None
         '''

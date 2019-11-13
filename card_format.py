@@ -21,8 +21,9 @@ class card():
         self.vp = vp
         return
 
-    def __str__(self): return self.getName()
-    # def print(self): return self.getName()
+    def __str__(self):
+        '''When you print card, return card name'''
+        return self.getName()
 
     def getName(self): return self.name
 
@@ -41,6 +42,8 @@ class card():
     def isCurse(self): return "curse" in self.type
 
 def kingdomCards():
+    ''' Return a list of all cards in the kingdom
+    '''
     kingdom = list()
     kingdom.append(card("curse", ["curse"], 0, coins=0, vp=-1))
     kingdom.append(card("estate", ["victory"], 2, coins=0, vp=1))
@@ -52,12 +55,16 @@ def kingdomCards():
     return kingdom
 
 def startingCards():
+    ''' Return the cards the bot starts with
+    '''
     deck = list()
     for _ in range(7): deck.append(card("copper", "treasure", 0, coins=1, vp=0))
     for _ in range(3): deck.append(card("estate", "victory", 2, coins=0, vp=1))
     return deck
 
 def allDeckCards(hand, deck, discard, play):
+    ''' Start to get all the cards the bot owns into a single list
+    '''
     content = list()
     areas = [hand, deck, discard, play]
     for area in areas:
@@ -65,6 +72,10 @@ def allDeckCards(hand, deck, discard, play):
     return deckContent(content)
 
 def deckContent(deck):
+    ''' Create a list of lists of all the elements in the deck
+        I.e. [... [copper, 7] ...] indicates there 7 coppers in the deck
+        THIS IS THE STATE OF THE BOT
+    '''
     tmpSupplyCards = kingdomCards()
     supplyCards = list()
     for card in tmpSupplyCards: supplyCards.append( [card.getName(), 0] )

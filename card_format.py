@@ -78,12 +78,16 @@ def deckContent(deck):
     '''
     tmpSupplyCards = kingdomCards()
     supplyCards = list()
-    for card in tmpSupplyCards: supplyCards.append( [card.getName(), 0] )
+    for card in tmpSupplyCards: supplyCards.append( (card.getName(), 0) )
     for card in deck:
-        for supplyCard in supplyCards:
-            if card in supplyCard:
-                supplyCard[1] += 1
+        for index in range(len(supplyCards)):
+            if card in supplyCards[index]:
+                count = supplyCards[index][1]
+                supplyCards[index] = (card, count+1)
+                # supplyCard[1] += 1
                 break
+    # print(supplyCards)
+    supplyCards = tuple(supplyCards)
     return supplyCards
 
 def testCards():

@@ -1,7 +1,7 @@
 
 import time
 import random
-# import numpy as np
+import numpy as np
 import card_format
 import player_format
 
@@ -24,13 +24,15 @@ def bestBuy(deck, possibleBuys):
     global  gAlpha, gEpsilon, gSAPEstimates, gSAPPrevious, gConverter
     actions = list()
     for card in possibleBuys:
-        print("card type: {}".format(type(card)))
-        print("deck type: {}".format(type(deck)))
+        # print("card type: {}".format(type(card)))
+        # print("deck type: {}".format(type(deck)))
         if (deck, card) not in gSAPEstimates.keys():
             gSAPEstimates[(deck, card)] = 0
         actions.append( (gSAPEstimates[(deck, card)], (deck,card) ) )
     bestActions = max(actions)
-    print(bestActions)
+    print("actions: {}".format(actions))
+    print("bestActions: {}".format(bestActions))
+    input("> ")
     return
 
 def actionPhase(hand, deck, discard, play, totalDeck, p1):

@@ -33,3 +33,15 @@ class playerStats():
     def changeCoins(self, amt=1): self.coins += amt
 
     def changeVp(self, amt=1): self.vp += amt
+
+def resetStats(player):
+    while player.getBuys() != 1:
+        if player.getBuys() > 1: player.changeBuys(-1)
+        else: player.changeBuys(1)
+    while player.getActions() != 1:
+        if player.getActions() > 1: player.changeActions(-1)
+        else: player.getActions(1)
+    while player.getCoins() != 0:
+        if player.getCoins() > 0: player.changeCoins(-1)
+        else: player.changeCoins(1)
+    return

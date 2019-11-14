@@ -20,20 +20,24 @@ def firstHand(cards):
     for _ in range(5): hand.append(deck.pop(-1))
     return (hand, deck, list(), list())
 
-def bestBuy(deck, possibleBuys):
+def bestBuy(deck, possibleBuys, numBuys):
     global  gAlpha, gEpsilon, gSAPEstimates, gSAPPrevious, gConverter
-    actions = list()
+    buys = list()   # As in cards we could possibly buy;  parallel array
+    values = list() # As in values of the different buys; parallel array
     for card in possibleBuys:
-        # print("card type: {}".format(type(card)))
-        # print("deck type: {}".format(type(deck)))
-        if (deck, card) not in gSAPEstimates.keys():
-            gSAPEstimates[(deck, card)] = 0
-        actions.append( (gSAPEstimates[(deck, card)], (deck,card) ) )
-    bestActions = max(actions)
-    print("actions: {}".format(actions))
+        if (deck, card) not in gSAPEstimates.keys(): gSAPEstimates[(deck, card)] = 0
+        buys.append(card)
+        values.append(gSAPEstimates[(deck, card)])
+    bestActions = np.argwhere(values == np.max(values) )
+    bestActions = bestActions.flatten()
+    # Remember that the indexes for alllActions are the actions
+    randomIndex = random.choice(bestActions)
+    print("values: {}".format(values))
+    print("buys: {}".format(buys))
     print("bestActions: {}".format(bestActions))
+    print("Index: {}".format(randomIndex))
     input("> ")
-    return
+    return buys[randomIndex]
 
 def actionPhase(hand, deck, discard, play, totalDeck, p1):
     ''' No actions right now '''
@@ -52,7 +56,8 @@ def buyPhase(hand, deck, discard, play, totalDeck, p1):
     possibleBuys = list()
     for card in supplyCards:
         if card.getCost() <= p1.getCoins(): possibleBuys.append(card.getName())
-    buys = bestBuy(totalDeck, possibleBuys)
+    possibleBuys.append("None") # gotta add that it may be better to buy nothing
+    buys = bestBuy(totalDeck, possibleBuys, p1.getBuys())
     return hand, deck, discard, play, totalDeck, p1
 
 def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
@@ -62,11 +67,11 @@ def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
 
     while len(hand) < 5:
         if len(deck) < 1:
-            # print("SHUFFLE")
             random.shuffle(discard)
             deck = discard
             discard = list()
         hand.append(deck.pop(-1))
+    player_format.resetStats(p1)
     return hand, deck, discard, play, totalDeck, p1
 
 def initBot():

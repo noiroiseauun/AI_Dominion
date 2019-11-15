@@ -54,6 +54,18 @@ def kingdomCards():
     kingdom.append(card("gold", ["treasure"], 6, coins=3, vp=0))
     return kingdom
 
+def kingdomCardValues(kingdom):
+    kingdomAmounts = dict()
+    for card in kingdom:
+        if card.getName() == "curse": kingdomAmounts[card.getName()] = 10
+        elif card.getName() == "estate": kingdomAmounts[card.getName()] = 8
+        elif card.getName() == "duchy": kingdomAmounts[card.getName()] = 8
+        elif card.getName() == "province": kingdomAmounts[card.getName()] = 8
+        elif card.getName() == "copper": kingdomAmounts[card.getName()] = 46
+        elif card.getName() == "silver": kingdomAmounts[card.getName()] = 40
+        elif card.getName() == "gold": kingdomAmounts[card.getName()] = 30
+    return kingdomAmounts
+
 def startingCards():
     ''' Return the cards the bot starts with
     '''
@@ -89,6 +101,25 @@ def deckContent(deck):
     # print(supplyCards)
     supplyCards = tuple(supplyCards)
     return supplyCards
+
+def newCard(deck, name):
+    if name == "curse":
+        deck.append(card("curse", ["curse"], 0, coins=0, vp=-1))
+    elif name == "estate":
+        deck.append(card("estate", ["victory"], 2, coins=0, vp=1))
+    elif name == "duchy":
+        deck.append(card("duchy", ["victory"], 5, coins=0, vp=3))
+    elif name == "province":
+        deck.append(card("province", ["victory"], 8, coins=0, vp=6))
+    elif name == "copper":
+        deck.append(card("copper", ["treasure"], 0, coins=1, vp=0))
+    elif name == "silver":
+        deck.append(card("silver", ["treasure"], 3, coins=2, vp=0))
+    elif name == "gold":
+        deck.append(card("gold", ["treasure"], 6, coins=3, vp=0))
+    elif name == "none":
+        pass
+    return deck
 
 def testCards():
     x = card("silver", ["treasure"], 3, coins=2)

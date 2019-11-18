@@ -15,6 +15,9 @@ gEpsilon = 0.0
 gAlpha = 0.0
 
 def firstHand(cards):
+    ''' Create the first hand to be played; cards are the starting cards
+        Returns the hand, deck, discard, and play piles (or locations)
+    '''
     random.shuffle(cards)
     hand = list()
     deck = cards
@@ -22,6 +25,7 @@ def firstHand(cards):
     return (hand, deck, list(), list())
 
 def bestBuy(deck, possibleBuys, numBuys):
+    ''' Return the card we are going to buy, normally the greedy buy'''
     # TODO: Multi-buys not implemented; i.e. always assumes 1 buy
     global  gSAPEstimates, gSAPPrevious, gSAPCurrent
 
@@ -49,6 +53,7 @@ def actionPhase(hand, deck, discard, play, totalDeck, p1):
     return hand, deck, discard, play, totalDeck, p1
 
 def buyPhase(hand, deck, discard, play, totalDeck, p1):
+    ''' The buy phase for a regular dominion turn'''
     global supplyCards, supplyAmounts
     tmpHand = list()
     while len(hand) > 0:
@@ -70,7 +75,7 @@ def buyPhase(hand, deck, discard, play, totalDeck, p1):
     return hand, deck, discard, play, totalDeck, p1
 
 def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
-
+    ''' the cleanup phase for a regular dominion turn '''
     while len(hand) > 0: discard.append(hand.pop(-1))
     while len(play) > 0: discard.append(play.pop(-1))
 
@@ -84,6 +89,7 @@ def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
     return hand, deck, discard, play, totalDeck, p1
 
 def updateValues(totalDeck):
+    ''' math! this is were sarsa is implemented '''
     global gSAPCurrent, gSAPPrevious, gSAPEstimates
     if ("province", 1) in totalDeck: reward = 0
     else: reward = -1
@@ -93,6 +99,7 @@ def updateValues(totalDeck):
     return
 
 def initBot():
+    ''' where we get the game ready '''
     global supplyCards, supplyAmounts, gAlpha, gEpsilon
     random.seed(19)
     p1 = player_format.playerStats(1,1,0,3) # Easy 3 vp for starting
@@ -106,31 +113,25 @@ def initBot():
     return hand, deck, discard, play, p1
 
 def botPlay(hand, deck, discard, play, p1):
+    ''' Where the bot walks through each phase of the turn '''
     turn = 0
     for turn in range(maxTurns):
-        # print("t{}".format(turn))
         totalDeck = card_format.allDeckCards(hand, deck, discard, play)
         for phase in phases:
             if phase == "action": hand, deck, discard, play, totalDeck, p1 = actionPhase(hand, deck, discard, play, totalDeck, p1)
             elif phase == "buy": hand, deck, discard, play, totalDeck, p1 = buyPhase(hand, deck, discard, play, totalDeck, p1)
             elif phase == "cleanup": hand, deck, discard, play, totalDeck, p1 = cleanupPhase(hand, deck, discard, play, totalDeck, p1)
             else: print("OH NO")
-        # print("totalDeck after t{}:\n{}".format(turn,totalDeck))
-        # print("supplyAmounts:\n{}".format(supplyAmounts))
-        # input("> ")
         if gSAPPrevious != None:
+            # skip providing values the first turn
             updateValues(totalDeck)
 
         if supplyAmounts["province"] != 8:
-            # print("OMG YAY")
-            # print("Turn: {}".format(turn))
-            # print("totalDeck after t{}: \n{}".format(turn, totalDeck))
-            # print("supplyAmounts: \n{}".format(supplyAmounts))
-            # print("gSAPEstimates: \n{}".format(gSAPEstimates))
             break
     return turn
 
 def plotGraph(array):
+    ''' Where we plot the graph '''
     plt.plot(range(len(array)), array,'.b')
     plt.title("SARSA 1 province")
     plt.xlabel("Run")

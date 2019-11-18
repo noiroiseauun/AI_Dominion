@@ -2,6 +2,7 @@
 import time
 import random
 import numpy as np
+import matplotlib.pyplot as plt
 import card_format
 import player_format
 
@@ -9,6 +10,7 @@ maxTurns = 1000
 phases = ["action", "buy", "cleanup"]
 gSAPEstimates = dict() # State-action pair estimates
 gSAPPrevious = None # state-action pair previous
+gSAPCurrent = None
 gEpsilon = 0.0
 gAlpha = 0.0
 
@@ -21,22 +23,25 @@ def firstHand(cards):
 
 def bestBuy(deck, possibleBuys, numBuys):
     # TODO: Multi-buys not implemented; i.e. always assumes 1 buy
-    global  gSAPEstimates, gSAPPrevious
+    global  gSAPEstimates, gSAPPrevious, gSAPCurrent
+
     buys = list()   # As in cards we could possibly buy;  parallel array
     values = list() # As in values of the different buys; parallel array
     for card in possibleBuys:
         if (deck, card) not in gSAPEstimates.keys(): gSAPEstimates[(deck, card)] = 0
         buys.append(card)
         values.append(gSAPEstimates[(deck, card)])
-    bestActions = np.argwhere(values == np.max(values) )
-    bestActions = bestActions.flatten()
-    # Remember that the indexes for alllActions are the actions
-    randomIndex = random.choice(bestActions)
-    gSAPPrevious = (deck, buys[randomIndex])
-    # print("values: {}".format(values))
-    # print("buys: {}".format(buys))
-    # print("Card Bought: {}".format(buys[randomIndex]))
-    # input("> ")
+
+    randomNum = random.randrange(1000)
+    if randomNum < gEpsilon:
+        randomIndex = random.randrange( len(buys) )
+    else:
+        bestActions = np.argwhere(values == np.max(values) )
+        bestActions = bestActions.flatten()
+        randomIndex = random.choice(bestActions)
+    if gSAPCurrent != None:
+        gSAPPrevious = gSAPCurrent
+    gSAPCurrent = (deck, buys[randomIndex])
     return buys[randomIndex]
 
 def actionPhase(hand, deck, discard, play, totalDeck, p1):
@@ -61,7 +66,7 @@ def buyPhase(hand, deck, discard, play, totalDeck, p1):
     buys = bestBuy(totalDeck, possibleBuys, p1.getBuys())
     if buys != "none": supplyAmounts[buys] -= 1
     discard = card_format.newCard(discard, buys)
-
+    totalDeck = card_format.allDeckCards(hand, deck, discard, play)
     return hand, deck, discard, play, totalDeck, p1
 
 def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
@@ -78,6 +83,15 @@ def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
     player_format.resetStats(p1)
     return hand, deck, discard, play, totalDeck, p1
 
+def updateValues(totalDeck):
+    global gSAPCurrent, gSAPPrevious, gSAPEstimates
+    if ("province", 1) in totalDeck: reward = 0
+    else: reward = -1
+    currentValue = gSAPEstimates[gSAPCurrent]
+    pastValueUpdated = gSAPEstimates[gSAPPrevious] + gAlpha * (reward + currentValue -  gSAPEstimates[gSAPPrevious])
+    gSAPEstimates[gSAPPrevious] = pastValueUpdated
+    return
+
 def initBot():
     global supplyCards, supplyAmounts, gAlpha, gEpsilon
     random.seed(19)
@@ -92,6 +106,7 @@ def initBot():
     return hand, deck, discard, play, p1
 
 def botPlay(hand, deck, discard, play, p1):
+    turn = 0
     for turn in range(maxTurns):
         # print("t{}".format(turn))
         totalDeck = card_format.allDeckCards(hand, deck, discard, play)
@@ -103,17 +118,40 @@ def botPlay(hand, deck, discard, play, p1):
         # print("totalDeck after t{}:\n{}".format(turn,totalDeck))
         # print("supplyAmounts:\n{}".format(supplyAmounts))
         # input("> ")
+        if gSAPPrevious != None:
+            updateValues(totalDeck)
+
         if supplyAmounts["province"] != 8:
-            print("OMG YAY")
-            print("totalDeck after t{}: \n{}".format(turn, totalDeck))
-            print("supplyAmounts: \n{}".format(supplyAmounts))
+            # print("OMG YAY")
+            # print("Turn: {}".format(turn))
+            # print("totalDeck after t{}: \n{}".format(turn, totalDeck))
+            # print("supplyAmounts: \n{}".format(supplyAmounts))
+            # print("gSAPEstimates: \n{}".format(gSAPEstimates))
             break
+    return turn
+
+def plotGraph(array):
+    plt.plot(range(len(array)), array,'.b')
+    plt.title("SARSA 1 province")
+    plt.xlabel("Run")
+    plt.ylabel("Turns")
+    print("Min turns: {}".format(min(array)))
+    amount = np.argwhere(array == np.min(array) )
+    amount = len(amount.flatten())
+    print("Number of times optimal: {}".format(amount))
+    print("average turns: {}".format(np.mean(array)))
+    print("state-action space: {}".format(len(gSAPEstimates.keys())))
+    plt.show()
     return
 
 def main():
     t = time.time()
-    hand, deck, discard, play, p1 = initBot()
-    botPlay(hand, deck, discard, play, p1)
+    turnList = list()
+    for x in range(10000):
+        hand, deck, discard, play, p1 = initBot()
+        turn = botPlay(hand, deck, discard, play, p1)
+        turnList.append(turn)
+    plotGraph(turnList)
     print("Total time: {}".format(time.time() - t))
 
     return

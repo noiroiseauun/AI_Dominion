@@ -11,6 +11,7 @@ phases = ["action", "buy", "cleanup"]
 gSAPEstimates = dict() # State-action pair estimates
 gSAPPrevious = None # state-action pair previous
 gSAPCurrent = None
+gSAPSteps = list()
 gEpsilon = 0.0
 gAlpha = 0.0
 
@@ -46,6 +47,7 @@ def bestBuy(deck, possibleBuys, numBuys):
     if gSAPCurrent != None:
         gSAPPrevious = gSAPCurrent
     gSAPCurrent = (deck, buys[randomIndex])
+    gSAPSteps.append( (deck, buys[randomIndex]) )
     return buys[randomIndex]
 
 def actionPhase(hand, deck, discard, play, totalDeck, p1):
@@ -90,15 +92,21 @@ def cleanupPhase(hand, deck, discard, play, totalDeck, p1):
 
 def updateValues(totalDeck):
     ''' math! this is were sarsa is implemented '''
-    global gSAPCurrent, gSAPPrevious, gSAPEstimates
-    if ("province", 1) in totalDeck: reward = 0
-    else: reward = -1
-    currentValue = gSAPEstimates[gSAPCurrent]
-    pastValueUpdated = gSAPEstimates[gSAPPrevious] + gAlpha * (reward + currentValue -  gSAPEstimates[gSAPPrevious])
-    gSAPEstimates[gSAPPrevious] = pastValueUpdated
+    global gSAPCurrent, gSAPPrevious, gSAPEstimates, gSAPSteps
+    valueList = list()
+    rewardList = list()
+    for step in gSAPSteps:
+        valueList.append(gSAPEstimates[step])
+        if step[1] == "province": rewardList.append(0)
+        else: rewardList.append(-1)
+    value = np.mean(valueList)
+    reward = np.mean(rewardList)
+    for step in gSAPSteps:
+        pastValueUpdated = gSAPEstimates[step] + gAlpha * (reward + value - gSAPEstimates[step])
+        gSAPEstimates[step] = pastValueUpdated
     return
 
-def initBot(a, e):
+def initBot():
     ''' where we get the game ready '''
     global supplyCards, supplyAmounts, gAlpha, gEpsilon
     random.seed(19)
@@ -108,8 +116,8 @@ def initBot(a, e):
     cards = card_format.startingCards()
     hand, deck, discard, play = firstHand(cards)
     # 100/1000 = 0.1, the value we want for epsilon
-    gEpsilon = e
-    gAlpha = a
+    gEpsilon = 100
+    gAlpha = 0.75
     return hand, deck, discard, play, p1
 
 def botPlay(hand, deck, discard, play, p1):
@@ -122,11 +130,9 @@ def botPlay(hand, deck, discard, play, p1):
             elif phase == "buy": hand, deck, discard, play, totalDeck, p1 = buyPhase(hand, deck, discard, play, totalDeck, p1)
             elif phase == "cleanup": hand, deck, discard, play, totalDeck, p1 = cleanupPhase(hand, deck, discard, play, totalDeck, p1)
             else: print("OH NO")
-        if gSAPPrevious != None:
-            # skip providing values the first turn
-            updateValues(totalDeck)
 
         if supplyAmounts["province"] != 8:
+            updateValues(totalDeck)
             break
     return turn
 
@@ -136,7 +142,6 @@ def plotGraph(array):
     plt.title("SARSA 1 province")
     plt.xlabel("Run")
     plt.ylabel("Turns")
-    print("Alpha: {} \t Epsilon: {}".format(gAlpha, gEpsilon))
     print("Min turns: {}".format(min(array)))
     amount = np.argwhere(array == np.min(array) )
     amount = len(amount.flatten())
@@ -146,46 +151,13 @@ def plotGraph(array):
     plt.show()
     return
 
-def paramInit():
-    alphas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
-    epsilons = [10, 50, 100, 150, 200, 250, 300, 350, 400]
-    return (alphas, epsilons)
-
-def paramTesting(runs):
-    t = time.time()
-    alphas, epsilons = paramInit()
-    for alpha in alphas:
-        for epsilon in epsilons:
-            turnList = list()
-            gSAPEstimates = dict()
-            gSAPPrevious = None # state-action pair previous
-            gSAPCurrent = None
-            for _ in range(runs):
-                hand, deck, discard, play, p1 = initBot(alpha, epsilon)
-                turn = botPlay(hand, deck, discard, play, p1)
-                turnList.append(turn)
-            appendInfo(turnList)
-    print("Total time: {}".format(time.time() - t))
-    return
-
-def appendInfo(turnList):
-    amount = np.argwhere(turnList == np.min(turnList) )
-    amount = len(amount.flatten())
-    fileObj = open("results2.txt", 'a')
-    fileObj.write("--------------------------------------------------------------------------------\n")
-    fileObj.write("Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after {} trials\n".format(len(turnList)))
-    fileObj.write("Params: \t Alpha: {} \t Epsilon {}\n".format(gAlpha, gEpsilon))
-    fileObj.write("Optimization: \t Min Turns: {} \t # Optimal Runs: {} \t Percentage: {}\n".format(min(turnList), amount, (amount/len(turnList)*100)))
-    fileObj.write("Stats: \t Avg Turns: {} \t Median Turns: {}\n".format(np.mean(turnList), np.median(turnList)))
-    fileObj.write("Space: \t State-action Space: {}\n".format(len(gSAPEstimates.keys())))
-    fileObj.write("--------------------------------------------------------------------------------\n")
-    fileObj.close()
-
 def main():
+    global gSAPSteps
     t = time.time()
     turnList = list()
-    for x in range(500):
-        hand, deck, discard, play, p1 = initBot(0.8, 150)
+    for x in range(10000):
+        gSAPSteps = list()
+        hand, deck, discard, play, p1 = initBot()
         turn = botPlay(hand, deck, discard, play, p1)
         turnList.append(turn)
     plotGraph(turnList)
@@ -195,4 +167,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # paramTesting(500)

@@ -17,11 +17,8 @@ import random
 gSAPEstimates = dict()
 gSAPCurrent = None
 gSAPPrevious = None
-gCols = 10
-gRows = 7
-gEpsilon = 0.0
-gAlpha = 0.0
-gSAPprevious = None
+gEpsilon = 10
+gAlpha = 0.5
 
 def agent_init():
     """
@@ -30,9 +27,12 @@ def agent_init():
 
     """
     global gSAPEstimates, gEpsilon, gAlpha
+    # gSAPEstimates = dict()
+    # gSAPCurrent = None
+    # gSAPPrevious = None
     # 100/1000 = 0.1, the value we want for epsilon
-    gEpsilon = 100
-    gAlpha = 0.75
+    # gEpsilon = 100
+    # gAlpha = 0.75
     return
 
 def agent_start(state):

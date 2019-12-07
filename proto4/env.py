@@ -72,7 +72,7 @@ def env_step(action):
 
     for buy in action:
         if buy == "province":
-            reward = 0
+            reward = 1
             isTerminal = True
         if buy != "none":
             supplyAmounts[buy] -= 1

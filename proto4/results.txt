@@ -1,0 +1,506 @@
+NOTE: THESE RESULTS WERE RUN WITH EACH KINGDOM CARD HAVING 2 IN THE SUPPLY
+
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 14 	 Percentage: 0.27999999999999997
+Stats: 	 Avg Turns: 41.674 	 Median Turns: 35.0
+Space: 	 State-action Space: 2907
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 10 	 Percentage: 0.2
+Stats: 	 Avg Turns: 43.2252 	 Median Turns: 36.0
+Space: 	 State-action Space: 2872
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 46.3426 	 Median Turns: 39.0
+Space: 	 State-action Space: 2881
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 47.1552 	 Median Turns: 40.0
+Space: 	 State-action Space: 2842
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 50.2542 	 Median Turns: 42.0
+Space: 	 State-action Space: 2843
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 10 	 Percentage: 0.2
+Stats: 	 Avg Turns: 51.8796 	 Median Turns: 45.0
+Space: 	 State-action Space: 2856
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 3 	 Percentage: 0.06
+Stats: 	 Avg Turns: 53.1628 	 Median Turns: 46.0
+Space: 	 State-action Space: 2809
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 4 	 Percentage: 0.08
+Stats: 	 Avg Turns: 55.099 	 Median Turns: 47.0
+Space: 	 State-action Space: 2791
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.1 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 2 	 Percentage: 0.04
+Stats: 	 Avg Turns: 58.1456 	 Median Turns: 50.0
+Space: 	 State-action Space: 2764
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 17 	 Percentage: 0.33999999999999997
+Stats: 	 Avg Turns: 38.9488 	 Median Turns: 32.0
+Space: 	 State-action Space: 2926
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 15 	 Percentage: 0.3
+Stats: 	 Avg Turns: 39.7996 	 Median Turns: 33.0
+Space: 	 State-action Space: 2915
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 12 	 Percentage: 0.24
+Stats: 	 Avg Turns: 42.1176 	 Median Turns: 35.0
+Space: 	 State-action Space: 2908
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 6 	 Percentage: 0.12
+Stats: 	 Avg Turns: 45.5766 	 Median Turns: 38.0
+Space: 	 State-action Space: 2937
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 7 	 Percentage: 0.13999999999999999
+Stats: 	 Avg Turns: 46.9912 	 Median Turns: 40.0
+Space: 	 State-action Space: 2903
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 5 	 Percentage: 0.1
+Stats: 	 Avg Turns: 50.207 	 Median Turns: 43.0
+Space: 	 State-action Space: 2884
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 10 	 Percentage: 0.2
+Stats: 	 Avg Turns: 51.8908 	 Median Turns: 45.0
+Space: 	 State-action Space: 2874
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 5 	 Percentage: 0.1
+Stats: 	 Avg Turns: 54.6536 	 Median Turns: 47.0
+Space: 	 State-action Space: 2890
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.2 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 3 	 Percentage: 0.06
+Stats: 	 Avg Turns: 56.5234 	 Median Turns: 49.0
+Space: 	 State-action Space: 2849
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 25 	 Percentage: 0.5
+Stats: 	 Avg Turns: 37.1422 	 Median Turns: 29.0
+Space: 	 State-action Space: 2949
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 20 	 Percentage: 0.4
+Stats: 	 Avg Turns: 37.8904 	 Median Turns: 30.0
+Space: 	 State-action Space: 2944
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 23 	 Percentage: 0.45999999999999996
+Stats: 	 Avg Turns: 40.198 	 Median Turns: 32.0
+Space: 	 State-action Space: 2927
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 16 	 Percentage: 0.32
+Stats: 	 Avg Turns: 43.2266 	 Median Turns: 35.0
+Space: 	 State-action Space: 2940
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 45.8574 	 Median Turns: 37.5
+Space: 	 State-action Space: 2947
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 48.264 	 Median Turns: 41.0
+Space: 	 State-action Space: 2935
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 12 	 Percentage: 0.24
+Stats: 	 Avg Turns: 50.4848 	 Median Turns: 43.0
+Space: 	 State-action Space: 2877
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 10 	 Percentage: 0.2
+Stats: 	 Avg Turns: 53.147 	 Median Turns: 46.0
+Space: 	 State-action Space: 2899
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.3 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 2 	 Percentage: 0.04
+Stats: 	 Avg Turns: 56.7368 	 Median Turns: 49.0
+Space: 	 State-action Space: 2826
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 19 	 Percentage: 0.38
+Stats: 	 Avg Turns: 35.7558 	 Median Turns: 28.0
+Space: 	 State-action Space: 2941
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 20 	 Percentage: 0.4
+Stats: 	 Avg Turns: 36.8392 	 Median Turns: 28.0
+Space: 	 State-action Space: 2960
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 14 	 Percentage: 0.27999999999999997
+Stats: 	 Avg Turns: 40.363 	 Median Turns: 32.0
+Space: 	 State-action Space: 2946
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 11 	 Percentage: 0.22
+Stats: 	 Avg Turns: 42.3886 	 Median Turns: 35.0
+Space: 	 State-action Space: 2913
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 45.1298 	 Median Turns: 37.0
+Space: 	 State-action Space: 2923
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 12 	 Percentage: 0.24
+Stats: 	 Avg Turns: 46.9634 	 Median Turns: 39.0
+Space: 	 State-action Space: 2909
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 50.18 	 Median Turns: 43.0
+Space: 	 State-action Space: 2901
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 4 	 Percentage: 0.08
+Stats: 	 Avg Turns: 53.863 	 Median Turns: 46.0
+Space: 	 State-action Space: 2880
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.4 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 5 	 Percentage: 0.1
+Stats: 	 Avg Turns: 55.088 	 Median Turns: 48.0
+Space: 	 State-action Space: 2884
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 16 	 Percentage: 0.32
+Stats: 	 Avg Turns: 33.5628 	 Median Turns: 25.0
+Space: 	 State-action Space: 2929
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 33 	 Percentage: 0.66
+Stats: 	 Avg Turns: 36.8622 	 Median Turns: 28.0
+Space: 	 State-action Space: 2957
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 16 	 Percentage: 0.32
+Stats: 	 Avg Turns: 39.643 	 Median Turns: 32.0
+Space: 	 State-action Space: 2952
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 17 	 Percentage: 0.33999999999999997
+Stats: 	 Avg Turns: 41.9292 	 Median Turns: 34.0
+Space: 	 State-action Space: 2947
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 15 	 Percentage: 0.3
+Stats: 	 Avg Turns: 45.6436 	 Median Turns: 38.0
+Space: 	 State-action Space: 2925
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 9 	 Percentage: 0.18
+Stats: 	 Avg Turns: 47.3766 	 Median Turns: 40.0
+Space: 	 State-action Space: 2912
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 4 	 Percentage: 0.08
+Stats: 	 Avg Turns: 50.2212 	 Median Turns: 43.0
+Space: 	 State-action Space: 2905
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 13 	 Percentage: 0.26
+Stats: 	 Avg Turns: 54.3126 	 Median Turns: 46.0
+Space: 	 State-action Space: 2878
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.5 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 7 	 Percentage: 0.13999999999999999
+Stats: 	 Avg Turns: 57.4722 	 Median Turns: 50.0
+Space: 	 State-action Space: 2877
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 33 	 Percentage: 0.66
+Stats: 	 Avg Turns: 34.6254 	 Median Turns: 25.0
+Space: 	 State-action Space: 2954
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 21 	 Percentage: 0.42
+Stats: 	 Avg Turns: 37.5104 	 Median Turns: 29.0
+Space: 	 State-action Space: 2927
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 20 	 Percentage: 0.4
+Stats: 	 Avg Turns: 39.5792 	 Median Turns: 32.0
+Space: 	 State-action Space: 2940
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 13 	 Percentage: 0.26
+Stats: 	 Avg Turns: 42.8126 	 Median Turns: 35.0
+Space: 	 State-action Space: 2945
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 15 	 Percentage: 0.3
+Stats: 	 Avg Turns: 45.11 	 Median Turns: 38.0
+Space: 	 State-action Space: 2918
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 8 	 Percentage: 0.16
+Stats: 	 Avg Turns: 48.3394 	 Median Turns: 41.0
+Space: 	 State-action Space: 2884
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 7 	 Percentage: 0.13999999999999999
+Stats: 	 Avg Turns: 51.1472 	 Median Turns: 44.0
+Space: 	 State-action Space: 2880
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 7 	 Percentage: 0.13999999999999999
+Stats: 	 Avg Turns: 53.5054 	 Median Turns: 46.0
+Space: 	 State-action Space: 2817
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.6 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 2 	 Percentage: 0.04
+Stats: 	 Avg Turns: 55.6982 	 Median Turns: 48.0
+Space: 	 State-action Space: 2830
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 16 	 Percentage: 0.32
+Stats: 	 Avg Turns: 35.4876 	 Median Turns: 27.0
+Space: 	 State-action Space: 2948
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 16 	 Percentage: 0.32
+Stats: 	 Avg Turns: 37.2408 	 Median Turns: 29.0
+Space: 	 State-action Space: 2933
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 20 	 Percentage: 0.4
+Stats: 	 Avg Turns: 41.023 	 Median Turns: 33.0
+Space: 	 State-action Space: 2933
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 18 	 Percentage: 0.36
+Stats: 	 Avg Turns: 44.787 	 Median Turns: 37.0
+Space: 	 State-action Space: 2916
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 10 	 Percentage: 0.2
+Stats: 	 Avg Turns: 46.1626 	 Median Turns: 40.0
+Space: 	 State-action Space: 2897
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 15 	 Percentage: 0.3
+Stats: 	 Avg Turns: 48.8998 	 Median Turns: 42.0
+Space: 	 State-action Space: 2887
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 3 	 Percentage: 0.06
+Stats: 	 Avg Turns: 51.5966 	 Median Turns: 44.0
+Space: 	 State-action Space: 2838
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 6 	 Percentage: 0.12
+Stats: 	 Avg Turns: 54.2884 	 Median Turns: 47.0
+Space: 	 State-action Space: 2812
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.7 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 6 	 Percentage: 0.12
+Stats: 	 Avg Turns: 57.0586 	 Median Turns: 49.0
+Space: 	 State-action Space: 2843
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 10
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 19 	 Percentage: 0.38
+Stats: 	 Avg Turns: 36.7574 	 Median Turns: 28.0
+Space: 	 State-action Space: 2948
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 50
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 12 	 Percentage: 0.24
+Stats: 	 Avg Turns: 41.458 	 Median Turns: 35.0
+Space: 	 State-action Space: 2923
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 100
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 14 	 Percentage: 0.27999999999999997
+Stats: 	 Avg Turns: 43.8884 	 Median Turns: 38.0
+Space: 	 State-action Space: 2927
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 150
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 15 	 Percentage: 0.3
+Stats: 	 Avg Turns: 46.54 	 Median Turns: 40.0
+Space: 	 State-action Space: 2888
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 200
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 11 	 Percentage: 0.22
+Stats: 	 Avg Turns: 48.5754 	 Median Turns: 42.0
+Space: 	 State-action Space: 2918
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 250
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 1 	 Percentage: 0.02
+Stats: 	 Avg Turns: 50.735 	 Median Turns: 44.0
+Space: 	 State-action Space: 2857
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 300
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 7 	 Percentage: 0.13999999999999999
+Stats: 	 Avg Turns: 52.5194 	 Median Turns: 46.0
+Space: 	 State-action Space: 2832
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 350
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 4 	 Percentage: 0.08
+Stats: 	 Avg Turns: 56.5308 	 Median Turns: 49.0
+Space: 	 State-action Space: 2837
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Epsilon Greedy Single-step SARSA Algorithm on Money Kingdom after 5000 trials
+Params: 	 Alpha: 0.8 	 Epsilon 400
+Optimization: 	 Min Turns: 5 	 # Optimal Runs: 10 	 Percentage: 0.2
+Stats: 	 Avg Turns: 58.2536 	 Median Turns: 51.0
+Space: 	 State-action Space: 2784
+--------------------------------------------------------------------------------

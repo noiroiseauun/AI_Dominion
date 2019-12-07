@@ -76,6 +76,13 @@ def kingdomCardValues(kingdom):
         elif card.getName() == "copper": kingdomAmounts[card.getName()] = 46
         elif card.getName() == "silver": kingdomAmounts[card.getName()] = 40
         elif card.getName() == "gold": kingdomAmounts[card.getName()] = 30
+        # if card.getName() == "curse": kingdomAmounts[card.getName()] = 8
+        # elif card.getName() == "estate": kingdomAmounts[card.getName()] = 8
+        # elif card.getName() == "duchy": kingdomAmounts[card.getName()] = 8
+        # elif card.getName() == "province": kingdomAmounts[card.getName()] = 8
+        # elif card.getName() == "copper": kingdomAmounts[card.getName()] = 8
+        # elif card.getName() == "silver": kingdomAmounts[card.getName()] = 8
+        # elif card.getName() == "gold": kingdomAmounts[card.getName()] = 8
     return kingdomAmounts
 
 def startingCards():
